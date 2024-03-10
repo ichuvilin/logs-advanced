@@ -19,7 +19,9 @@
                         </pattern>
                     </pattern>
                     <threadName/>
-                    <stackTrace/>
+                    <stackTrace>
+                        <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter"/>
+                    </stackTrace>
                 </providers>
             </encoder>
         </appender>

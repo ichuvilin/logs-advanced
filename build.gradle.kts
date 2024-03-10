@@ -5,8 +5,6 @@ plugins {
     id("io.freefair.lombok") version "8.6"
 }
 
-val springCloudVersion by extra("2023.0.0")
-
 group = "com.ichuvilin"
 version = "0.0.1-SNAPSHOT"
 
@@ -20,20 +18,15 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("net.logstash.logback:logstash-logback-encoder:7.4")
     implementation("ch.qos.logback:logback-core:1.5.3")
-    implementation("io.micrometer:micrometer-tracing-bridge-brave")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("io.zipkin.reporter2:zipkin-reporter-brave")
-    implementation("io.micrometer:micrometer-tracing-bridge-brave")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+    implementation("io.micrometer:micrometer-tracing-bridge-otel")
+    implementation("io.opentelemetry:opentelemetry-exporter-otlp")
+    implementation("com.github.javafaker:javafaker:1.0.2") {
+        exclude(group="org.yaml", module="snakeyaml")
     }
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.withType<Test> {
