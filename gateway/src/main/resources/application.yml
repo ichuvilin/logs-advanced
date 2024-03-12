@@ -17,6 +17,14 @@ spring:
           predicates:
             - Path=/user/**
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+tracing:
+  url: http://localhost:4317
+
 server:
   port: 8081
 
