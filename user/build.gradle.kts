@@ -20,6 +20,7 @@ dependencies {
     implementation("com.github.javafaker:javafaker:1.0.2") {
         exclude(group = "org.yaml", module = "snakeyaml")
     }
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")

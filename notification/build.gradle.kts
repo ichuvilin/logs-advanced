@@ -19,6 +19,7 @@ dependencies {
         exclude(group = "org.springframework.boot", module = "spring-boot-starter-jetty")
         exclude(group = "org.springframework.boot", module = "spring-boot-starter-undertow")
     }
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
     implementation("net.logstash.logback:logstash-logback-encoder:5.0")
     implementation("ch.qos.logback:logback-core")
     implementation("org.springframework.boot:spring-boot-starter-actuator")

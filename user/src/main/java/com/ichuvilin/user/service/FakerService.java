@@ -13,4 +13,11 @@ public class FakerService {
         return faker.name().firstName();
     }
 
+    public String getEmail() {
+        return faker.internet().emailAddress();
+    }
+
+    public String getTitle() {
+        return faker.dune().title();
+    }
 }
