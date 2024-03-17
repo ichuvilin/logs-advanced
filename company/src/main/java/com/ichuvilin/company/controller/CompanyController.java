@@ -1,7 +1,6 @@
 package com.ichuvilin.company.controller;
 
-import com.ichuvilin.company.service.FakerService;
-import com.ichuvilin.company.service.UserService;
+import com.ichuvilin.company.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,17 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @RequiredArgsConstructor
 public class CompanyController {
-    private final FakerService fakerService;
-    private final UserService userService;
+    private final CompanyService companyService;
 
     @GetMapping
     public String getCompany() {
-        return fakerService.getCompany();
+        return companyService.getCompany();
     }
 
     @GetMapping("/users")
     public String getUsersForCompany() {
-        var users = userService.getUsers();
+        var users = companyService.getUsersForCompany();
         return "Users for company: %s".formatted(users);
     }
 }

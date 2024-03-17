@@ -25,6 +25,7 @@ public class UserService {
         for (int i = 0; i < 5; i++) {
             res.add(fakerService.getUser());
         }
+        log.info("Users: {}", res);
         return res;
     }
 }
