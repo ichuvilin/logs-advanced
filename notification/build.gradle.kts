@@ -19,6 +19,12 @@ dependencies {
         exclude(group = "org.springframework.boot", module = "spring-boot-starter-jetty")
         exclude(group = "org.springframework.boot", module = "spring-boot-starter-undertow")
     }
+    implementation("net.logstash.logback:logstash-logback-encoder:5.0")
+    implementation("ch.qos.logback:logback-core")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
+    implementation("org.springframework.cloud:spring-cloud-starter-zipkin:2.2.8.RELEASE")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
