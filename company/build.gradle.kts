@@ -24,7 +24,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
-    implementation("org.springframework.cloud:spring-cloud-starter-zipkin:2.2.8.RELEASE")
+    implementation("io.micrometer:micrometer-registry-prometheus")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 dependencyManagement {
